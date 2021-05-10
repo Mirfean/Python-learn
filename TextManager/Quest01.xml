@@ -1,0 +1,53 @@
+<Quest>
+    <box>
+        <id>Q001</id>
+        <description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Phasellus eros lacus, imperdiet fermentum placerat vitae, suscipit at augue.
+          Fusce auctor et nisi vel ultricies. Donec non ex vitae arcu mattis convallis.
+          Nam nec nunc id turpis dapibus viverra nec sed eros. Nullam consequat nec felis eget volutpat.
+        </description>
+        <answers>
+            <answer>
+                <text>Answer 01</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 02</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 03</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 04</text>
+                <goto>Q002</goto>
+            </answer>
+        </answers>
+    </box>
+    <box>
+        <id>Q002</id>
+        <description>
+          Second box.
+        </description>
+        <answers>
+            <answer>
+                <text>Answer 05</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 06</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 07</text>
+                <goto>Q002</goto>
+            </answer>
+            <answer>
+                <text>Answer 08</text>
+                <goto>Q002</goto>
+            </answer>
+        </answers>
+    </box>
+</Quest>
