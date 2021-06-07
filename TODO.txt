@@ -16,3 +16,4 @@ Część praktyczna:
 • Stworzenie klasy z atrybutami instancji
 • Stowrzenie child klasy i dziedziczenia po klasie bazowej
 • Dodanie metody do klasy bazowej i dziedziczącej. Przeciążenie metody w klasie dziedziczącej
+• SQL Alchemy
