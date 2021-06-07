@@ -1,8 +1,7 @@
-from Core import BasicClass
 import PySimpleGUI as G_u_i
 import TextManager.TextPrep as Tp
 
-myBasicClass = BasicClass.BasicClass()
+
 text_prep = Tp.TextPreparer()
 
 # print(text_prep['Quest']['box']['id'])
