@@ -1,11 +1,4 @@
 Część teoretyczna:
-• Typy danych
-• Operatory (logiczne, matematyczne...)
-• Operator == vs is
-• Mutable/immutable | set, tuple, list, dict
-• Inicjalizowanie set, tuple, list, dict
-• literały list, dict
-• Set vs tuple
 • List comprehension
 • Dekoratory
 • OOP (klasy, abstrakcja, dziedziczenie)
@@ -17,3 +10,13 @@ Część praktyczna:
 • Stowrzenie child klasy i dziedziczenia po klasie bazowej
 • Dodanie metody do klasy bazowej i dziedziczącej. Przeciążenie metody w klasie dziedziczącej
 • SQL Alchemy
+
+
+Done:
+• Typy danych
+• Operatory (logiczne, matematyczne...)
+• Operator == vs is
+• Mutable/immutable | set, tuple, list, dict
+• Inicjalizowanie set, tuple, list, dict
+• literały list, dict
+• Set vs tuple
