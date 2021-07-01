@@ -19,7 +19,7 @@ layout = [[G_u_i.Text(current_box.description)],
           [G_u_i.Text(current_box.answers[2].text)]]
 
 
-window = G_u_i.Window('First Quest', layout)
+window = G_u_i.Window('First Quest', layout, no_titlebar=True, grab_anywhere=True)
 
 while True:
     event, values = window.read()
