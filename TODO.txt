@@ -1,13 +1,10 @@
 Część teoretyczna:
-• List comprehension
 • Dekoratory
 • OOP (klasy, abstrakcja, dziedziczenie)
 • OOP (wielodziedziczenie)
 • Git
 
 Część praktyczna:
-• Stworzenie klasy z atrybutami instancji
-• Stowrzenie child klasy i dziedziczenia po klasie bazowej
 • Dodanie metody do klasy bazowej i dziedziczącej. Przeciążenie metody w klasie dziedziczącej
 • SQL Alchemy
 
@@ -20,3 +17,6 @@ Done:
 • Inicjalizowanie set, tuple, list, dict
 • literały list, dict
 • Set vs tuple
+• List comprehension
+• Stworzenie klasy z atrybutami instancji
+• Stowrzenie child klasy i dziedziczenia po klasie bazowej
