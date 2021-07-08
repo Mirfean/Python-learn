@@ -1,5 +1,5 @@
-import TextManager.FileProcessing as Fp
 import TextManager.Box as B_o_x
+import TextManager.FileProcessing as Fp
 
 
 class TextPreparer:

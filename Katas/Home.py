@@ -1,6 +1,7 @@
-from typing import Union
-
 import copy
+import datetime
+import math
+from typing import Union
 
 
 def sum_numbers(text: str) -> int:
@@ -20,6 +21,10 @@ def checkio(array: list) -> int:
             print(str(result))
         result *= array.pop()
     return result
+
+
+def left_join(phrases: tuple) -> str:
+    return ",".join(phrases).replace("right", "left")
 
 
 def checkio2(words: str) -> bool:
@@ -63,13 +68,14 @@ def count_digits(text: str) -> int:
     return result
 
 
-def backward_string_by_word(text: str) -> str:
-    '''
-    not done :(
-    :param text:
-    :return:
-    '''
-    return text
+def backward_string_by_word(text):
+    return ' '.join(word[::-1] for word in text.split(' '))
+
+
+def Non_unique(data: list) -> list:
+    data = [x for x in data if data.count(x) > 1]
+
+    return data
 
 
 def second_index(text: str, symbol: str) -> [int, None]:
@@ -143,3 +149,104 @@ def sun_angle(time: str) -> Union[int, str]:
     if not int(time.replace(":", "")) in range(600, 1801):
         return "I don't see the sun!"
     return (int(time[0:2]) - 6) * 15 + int(time[3:]) * 0.25
+
+
+def between_markers(text: str, begin: str, end: str) -> str:
+
+    return ''
+
+
+def bigger_price(limit: int, data: list) -> list:
+    data.sort(key=lambda x: x.get('price'), reverse=True)
+    return data[:limit]
+
+
+def split_list(items: list) -> list:
+    return [items[:math.ceil(len(items)/2)], items[math.ceil(len(items)/2):]]
+
+def date_time(time: str) -> str:
+    time = time.split(" ")
+    print(time)
+    day = str(int(time[0][0:2]))
+    month = datetime.datetime.strptime(time[0][3:5], "%m").strftime("%B")
+    year = time[0][time[0].rfind(".")+1:] + " year"
+
+    hour = str(int(time[1][0:2]))
+    if int(hour) == 1:
+        hour += " hour"
+    else:
+        hour += " hours"
+
+    minutes = str(int(time[1][3:5]))
+    if int(minutes) == 1:
+        minutes += " minute"
+    else:
+        minutes += " minutes"
+    return " ".join((day, month, year, hour, minutes))
+
+# MORSE
+
+MORSE = {'.-':    'a', '-...':  'b', '-.-.':  'c',
+         '-..':   'd', '.':     'e', '..-.':  'f',
+         '--.':   'g', '....':  'h', '..':    'i',
+         '.---':  'j', '-.-':   'k', '.-..':  'l',
+         '--':    'm', '-.':    'n', '---':   'o',
+         '.--.':  'p', '--.-':  'q', '.-.':   'r',
+         '...':   's', '-':     't', '..-':   'u',
+         '...-':  'v', '.--':   'w', '-..-':  'x',
+         '-.--':  'y', '--..':  'z', '-----': '0',
+         '.----': '1', '..---': '2', '...--': '3',
+         '....-': '4', '.....': '5', '-....': '6',
+         '--...': '7', '---..': '8', '----.': '9'
+        }
+
+def morse_decoder(code):
+    morse_list = code.split(" ")
+    print(morse_list)
+    result = str()
+    # translate = [c for c in MORSE for x in morse_list if c == x]
+    # print(translate)
+    for x in morse_list:
+        if x == "":
+            if result[-1] != " ":
+                result += " "
+        else:
+            result += MORSE[x]
+    print(result)
+    return result.capitalize()
+
+
+# /MORSE
+
+# words_order
+
+def words_order(text: str, words: list) -> bool:
+    text_list = text.split()
+
+
+# /words_order
+
+"""
+MAIN
+"""
+
+if __name__ == '__main__':
+    print("Example:")
+    print(words_order('hi world im here', ['world', 'here']))
+
+    # These "asserts" are used for self-checking and not for an auto-testing
+    assert words_order('hi world im here', ['world', 'here']) == True
+    assert words_order('hi world im here', ['here', 'world']) == False
+    assert words_order('hi world im here', ['world']) == True
+    assert words_order('hi world im here',
+ ['world', 'here', 'hi']) == False
+    assert words_order('hi world im here',
+ ['world', 'im', 'here']) == True
+    assert words_order('hi world im here',
+ ['world', 'hi', 'here']) == False
+    assert words_order('hi world im here', ['world', 'world']) == False
+    assert words_order('hi world im here',
+ ['country', 'world']) == False
+    assert words_order('hi world im here', ['wo', 'rld']) == False
+    assert words_order('', ['world', 'here']) == False
+    print("Coding complete? Click 'Check' to earn cool rewards!")
