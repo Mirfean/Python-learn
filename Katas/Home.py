@@ -152,8 +152,19 @@ def sun_angle(time: str) -> Union[int, str]:
 
 
 def between_markers(text: str, begin: str, end: str) -> str:
-
-    return ''
+    index_begin = text.find(begin)
+    index_end = text.find(end)
+    if index_end < index_begin and index_end != -1:
+        return ""
+    if text.find(begin) != -1:
+        text = text[text.find(begin)+len(begin):]
+    print(text)
+    if text.find(end) != -1:
+        text = text[:text.find(end)]
+    print(text)
+    #if not is_begin and not is_end:
+        #return ""
+    return text
 
 
 def bigger_price(limit: int, data: list) -> list:
@@ -226,27 +237,33 @@ def words_order(text: str, words: list) -> bool:
 
 # /words_order
 
+
+from collections import Counter
+
+def frequency_sort(items):
+    return [item for value, c in Counter(items).most_common()
+              for item in [value] * c]
+
+from typing import List, Any
+
+
+def all_the_same(elements: List[Any]) -> bool:
+    if len(elements) == 0 or elements.count(elements[0]) == len(elements):
+        return True
+    return False
+
 """
 MAIN
 """
 
 if __name__ == '__main__':
     print("Example:")
-    print(words_order('hi world im here', ['world', 'here']))
+    print(all_the_same([1, 1, 1]))
 
     # These "asserts" are used for self-checking and not for an auto-testing
-    assert words_order('hi world im here', ['world', 'here']) == True
-    assert words_order('hi world im here', ['here', 'world']) == False
-    assert words_order('hi world im here', ['world']) == True
-    assert words_order('hi world im here',
- ['world', 'here', 'hi']) == False
-    assert words_order('hi world im here',
- ['world', 'im', 'here']) == True
-    assert words_order('hi world im here',
- ['world', 'hi', 'here']) == False
-    assert words_order('hi world im here', ['world', 'world']) == False
-    assert words_order('hi world im here',
- ['country', 'world']) == False
-    assert words_order('hi world im here', ['wo', 'rld']) == False
-    assert words_order('', ['world', 'here']) == False
+    assert all_the_same([1, 1, 1]) == True
+    assert all_the_same([1, 2, 1]) == False
+    assert all_the_same(['a', 'a', 'a']) == True
+    assert all_the_same([]) == True
+    assert all_the_same([1]) == True
     print("Coding complete? Click 'Check' to earn cool rewards!")
